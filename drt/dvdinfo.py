@@ -63,7 +63,7 @@ class DVDInfo(object):
         inblock = False
         mf = "  + Main Feature"
         tracknum = 0
-        with open(path, "r") as fn:
+        with open(path, "r", errors='ignore') as fn:
             content = fn.readlines()
         for line in content:
             if line.startswith("+ title"):
@@ -204,7 +204,7 @@ class DVDInfo(object):
                 for cn in range(0,cn1):
                     if t1["chapters"][cn]["blocks"] != t2["chapters"][cn]["blocks"]:
                         break
-                if cn == cn1 -1:
-                    ret = True
+                    if cn == cn1 -1:
+                        ret = True
         return ret
 

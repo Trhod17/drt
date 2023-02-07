@@ -38,7 +38,7 @@ log.addHandler(syslog)
 log.addHandler(terminal)
 
 def copydvd(dvdbackup, dvddevice, cpdir, dvdname):
-    cmd = "{} -i {} -o {} -M -n {}".format(dvdbackup, dvddevice, cpdir, dvdname)
+    cmd = "{} -i {} -o {} -M -n {} -p".format(dvdbackup, dvddevice, cpdir, dvdname)
     log.debug(cmd)
     ecode = os.system(cmd)
     return ecode
